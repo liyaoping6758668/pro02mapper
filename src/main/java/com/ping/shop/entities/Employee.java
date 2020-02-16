@@ -2,6 +2,9 @@ package com.ping.shop.entities;
 
 import javax.persistence.*;
 
+/**
+ * 其实实体类的注解是通用mapper引用JPA的注解
+ */
 @Table(name = "tabple_emp")
 public class Employee {
     @Id
@@ -72,5 +75,24 @@ public class Employee {
      */
     public void setEmpAge(Integer empAge) {
         this.empAge = empAge;
+    }
+
+    public Employee(String empName, Double empSalary, Integer empAge) {
+        this.empName = empName;
+        this.empSalary = empSalary;
+        this.empAge = empAge;
+    }
+
+    public Employee() {
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empId=" + empId +
+                ", empName='" + empName + '\'' +
+                ", empSalary=" + empSalary +
+                ", empAge=" + empAge +
+                '}';
     }
 }
